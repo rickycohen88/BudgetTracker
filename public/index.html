@@ -8,8 +8,8 @@
   <link rel="shortcut icon" href="./dist/assets/icons/icon_192x192.png" type="image/x-icon">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./dist/assets/stylemin.css">
-  <link rel="manifest" href="./dist/manifest.json">
+  <link rel="stylesheet" href="./public/style.css">
+  <link rel="manifest" href=".public/manifest.json">
 
   <title>Budget Tracker</title>
 </head>
@@ -43,21 +43,13 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-  <script src="./dist/assets/app.bundle.js"></script>
+  <script src="./public/index.js"></script>
+  <script> src="./public/db.js"</script>
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         navigator.serviceWorker.register("cache-worker.js").then(reg => {
           console.log("We found your cacheWorker", reg);
-        });
-      });
-    }
-  </script>
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("data-worker.js").then(reg => {
-          console.log("We found your dataWorker", reg);
         });
       });
     }

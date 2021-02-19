@@ -1,14 +1,11 @@
 const FILES_TO_CACHE = [
     "/",
     "/index.html",
-    "/dist/assets/stylemin.css",
-    "/dist/assets/app.bundle.js",
-    "/dist/assets/icons/icon_96x96.png",
-    "/dist/assets/icons/icon_128x128.png",
-    "/dist/assets/icons/icon_192x192.png",
-    "/dist/assets/icons/icon_256x256.png",
-    "/dist/assets/icons/icon_384x384.png",
-    "/dist/assets/icons/icon_512x512.png"
+    "/public/style.css",
+    "/public/index.js",
+    "/public/db.js",
+    "/public/icons/icon_192x192.png",
+    "/public/icons/icon_512x512.png"
 ];
 
 const STATIC_CACHE = "static-cache-v1";
