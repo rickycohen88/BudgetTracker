@@ -5,7 +5,6 @@ self.addEventListener("install", event => {
     event.waitUntil(
       caches
         .open(STATIC_CACHE)
-        .then(cache => cache.addAll(FILES_TO_CACHE))
         .then(() => self.skipWaiting())
     );
   });
@@ -17,7 +16,7 @@ self.addEventListener("activate", function(evt) {
     caches.keys().then(keyList => {
       return Promise.all(
         keyList.map(key => {
-          if (key !== STATIC_CACHE && key !== DATA_CACHE_NAME) {
+          if (key !== DATA_CACHE_NAME) {
             console.log("Removing old cache data", key);
             return caches.delete(key);
           }

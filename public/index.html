@@ -57,7 +57,7 @@
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         navigator.serviceWorker.register("data-worker.js").then(reg => {
-          console.log("We found your cacheWorker", reg);
+          console.log("We found your dataWorker", reg);
         });
       });
     }

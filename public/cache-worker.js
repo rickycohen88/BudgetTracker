@@ -12,6 +12,7 @@ const FILES_TO_CACHE = [
 ];
 
 const STATIC_CACHE = "static-cache-v1";
+const DATA_CACHE_NAME = "data-cache-v1";
 
 //install
 self.addEventListener("install", event => {
@@ -30,7 +31,7 @@ self.addEventListener("activate", function(evt) {
     caches.keys().then(keyList => {
       return Promise.all(
         keyList.map(key => {
-          if (key !== STATIC_CACHE && key !== DATA_CACHE_NAME) {
+          if (key !== STATIC_CACHE) {
             console.log("Removing old cache data", key);
             return caches.delete(key);
           }
@@ -53,5 +54,19 @@ self.addEventListener('fetch', (event) => {
         return fetch(event.request);
       })
     );
+  }
+
+  if(event.request.url.includes("/api/")){
+    event.respondWith(
+      caches.open(DATA_CACHE_NAME).then(cache =>{
+        return fetch(event.request)
+        .then(responce => {
+          if(responce === 200){
+            
+          }
+        })
+      })
+    )
+
   }
 });
