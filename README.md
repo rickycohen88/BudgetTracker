@@ -28,7 +28,7 @@ just download the files directly from git hub.
 * you need to have node.js installed
 
 ### How To
-simply navigate to this link [Heroku-Deployment](https://evening-lowlands-51185.herokuapp.com/).
+simply navigate to this link [Heroku-Deployment](https://calm-ravine-69658.herokuapp.com/).
 then use the project.
 
 ### screenshots / Code example
