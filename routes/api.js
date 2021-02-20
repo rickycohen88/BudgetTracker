@@ -1,5 +1,18 @@
 const router = require("express").Router();
 const Transaction = require("../models/transaction.js");
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost:27017/budget', {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
+const db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    db.once('open', function () {
+        console.log("connected to DB");
+    });
 
 router.post("/api/transaction", ({body}, res) => {
   Transaction.create(body)
